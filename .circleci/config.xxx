@@ -3,7 +3,7 @@ jobs:
   build:
     docker:
       - image: circleci/node:12-browsers
-    working_directory: ~/twilio-video-react-app
+    working_directory: ~/tcl-app-react-video-chat
 
     steps:
       - checkout
@@ -76,11 +76,11 @@ jobs:
   deploy:
     docker:
       - image: google/cloud-sdk
-    working_directory: ~/twilio-video-react-app
+    working_directory: ~/tcl-app-react-video-chat
 
     steps:
       - attach_workspace:
-          at: ~/twilio-video-react-app
+          at: ~/tcl-app-react-video-chat
      
       - run: |
           echo $GCLOUD_SERVICE_KEY | gcloud auth activate-service-account --key-file=-
