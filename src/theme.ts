@@ -1,4 +1,5 @@
 import { createMuiTheme } from '@material-ui/core';
+import { blue } from '@material-ui/core/colors';
 
 declare module '@material-ui/core/styles/createMuiTheme' {
   interface Theme {
@@ -38,7 +39,7 @@ export default createMuiTheme({
     },
     MuiButton: {
       root: {
-        borderRadius: '4px',
+        borderRadius: '0px',
         textTransform: 'none',
         color: 'rgb(40, 42, 43)',
         fontSize: '0.9rem',
@@ -56,9 +57,10 @@ export default createMuiTheme({
         },
       },
       outlinedPrimary: {
-        border: '2px solid #027AC5',
+        border: '2px solid #00f',
+        color: '#00f',
         '&:hover': {
-          border: '2px solid rgb(1, 85, 137)',
+          border: '2px solid #00f',
         },
       },
       startIcon: {
@@ -110,10 +112,10 @@ export default createMuiTheme({
   },
   palette: {
     primary: {
-      main: '#027AC5',
+      main: '#00f',
     },
   },
-  brand: '#E22525',
+  brand: '#00f',
   footerHeight: 72,
   mobileFooterHeight: 56,
   sidebarWidth: 355,

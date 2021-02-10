@@ -69,7 +69,7 @@ export default function DeviceSelectionScreen({ name, roomName, setStep }: Devic
   return (
     <>
       <Typography variant="h5" className={classes.gutterBottom}>
-        Join Session
+        Check everything works, then join your session
       </Typography>
 
       <Grid container justify="center">
@@ -100,8 +100,9 @@ export default function DeviceSelectionScreen({ name, roomName, setStep }: Devic
                 data-cy-join-now
                 onClick={handleJoin}
                 disabled={disableButtons}
+                style={{ width: '100%' }}
               >
-                Join Now
+                Join Session
               </Button>
             </div>
           </Grid>
