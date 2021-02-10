@@ -5,6 +5,8 @@ import { settingsReducer, initialSettings, Settings, SettingsAction } from './se
 import useActiveSinkId from './useActiveSinkId/useActiveSinkId';
 import useFirebaseAuth from './useFirebaseAuth/useFirebaseAuth';
 import usePasscodeAuth from './usePasscodeAuth/usePasscodeAuth';
+import useCircleLineAuth from './useCircleLineAuth/useCircleLineAuth';
+
 import { User } from 'firebase';
 
 export interface StateContextType {
@@ -59,6 +61,11 @@ export default function AppStateProvider(props: React.PropsWithChildren<{}>) {
     contextValue = {
       ...contextValue,
       ...usePasscodeAuth(), // eslint-disable-line react-hooks/rules-of-hooks
+    };
+  } else if (process.env.REACT_APP_SET_AUTH === 'tcl') {
+    contextValue = {
+      ...contextValue,
+      ...useCircleLineAuth(), // eslint-disable-line react-hooks/rules-of-hooks
     };
   } else {
     contextValue = {
