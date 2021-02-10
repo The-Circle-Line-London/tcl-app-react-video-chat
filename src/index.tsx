@@ -15,6 +15,7 @@ import './types';
 import { VideoProvider } from './components/VideoProvider';
 import useConnectionOptions from './utils/useConnectionOptions/useConnectionOptions';
 import UnsupportedBrowserWarning from './components/UnsupportedBrowserWarning/UnsupportedBrowserWarning';
+import BlockedAccess from './components/BlockedAccess/BlockedAccess';
 
 const VideoApp = () => {
   const { error, setError } = useAppState();
@@ -36,16 +37,12 @@ ReactDOM.render(
     <Router>
       <AppStateProvider>
         <Switch>
-          <PrivateRoute exact path="/">
-            <VideoApp />
-          </PrivateRoute>
           <PrivateRoute path="/room/:URLRoomName">
             <VideoApp />
           </PrivateRoute>
-          <Route path="/login">
-            <LoginPage />
+          <Route path="/">
+            <BlockedAccess />
           </Route>
-          <Redirect to="/" />
         </Switch>
       </AppStateProvider>
     </Router>
