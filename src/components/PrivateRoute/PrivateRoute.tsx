@@ -1,6 +1,7 @@
 import React from 'react';
 import { Redirect, Route, RouteProps } from 'react-router-dom';
 import { useAppState } from '../../state';
+import BlockedAccessPage from '../BlockedAccess/BlockedAccess';
 
 export default function PrivateRoute({ children, ...rest }: RouteProps) {
   const { isAuthReady, user } = useAppState();
@@ -11,21 +12,5 @@ export default function PrivateRoute({ children, ...rest }: RouteProps) {
     return null;
   }
 
-  return (
-    <Route
-      {...rest}
-      render={({ location }) =>
-        renderChildren ? (
-          children
-        ) : (
-          <Redirect
-            to={{
-              pathname: '/',
-              state: { from: location },
-            }}
-          />
-        )
-      }
-    />
-  );
+  return <Route {...rest} render={({ location }) => (renderChildren ? children : <BlockedAccessPage />)} />;
 }
