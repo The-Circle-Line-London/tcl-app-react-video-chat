@@ -5,8 +5,7 @@ import { RoomType } from '../../types';
 const TCL_JWT_COOKIE = 'circle-line-jwt';
 
 export function getPasscode() {
-  const match = window.location.href.match(/room\/(.*)/);
-  console.log('getPasscode:', window.location.href);
+  const match = window.location.href.match(/id=(.*)$/);
   const passcode = match ? match[1] : window.sessionStorage.getItem('passcode');
   return passcode;
 }
@@ -94,7 +93,7 @@ export default function useCircleLineAuth() {
           if (verification?.isValid) {
             setUser(verification);
             window.sessionStorage.setItem('passcode', passcode);
-            history.replace(window.location.pathname);
+            //history.replace(window.location.pathname);
           }
         })
         .then(() => setIsAuthReady(true));

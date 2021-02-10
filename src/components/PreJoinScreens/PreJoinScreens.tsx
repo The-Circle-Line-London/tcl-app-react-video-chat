@@ -5,7 +5,6 @@ import MediaErrorSnackbar from './MediaErrorSnackbar/MediaErrorSnackbar';
 import PreflightTest from './PreflightTest/PreflightTest';
 import RoomNameScreen from './RoomNameScreen/RoomNameScreen';
 import { useAppState } from '../../state';
-import { useParams } from 'react-router-dom';
 import useVideoContext from '../../hooks/useVideoContext/useVideoContext';
 import Video from 'twilio-video';
 
@@ -16,8 +15,15 @@ export enum Steps {
 
 export default function PreJoinScreens() {
   const { user } = useAppState();
+
+  const getRoomNameFromQuery = () => {
+    const match = window.location.href.match(/id=(.*)$/);
+    const passcode = match ? match[1] : null;
+    return passcode;
+  };
+
   const { getAudioAndVideoTracks } = useVideoContext();
-  const { URLRoomName } = useParams();
+  const URLRoomName = getRoomNameFromQuery();
   const [step, setStep] = useState(Steps.roomNameStep);
 
   const [name, setName] = useState<string>(user?.displayName || '');
