@@ -1,0 +1,10 @@
+name = "tcl-app-react-video-chat"
+type = "webpack"
+account_id = "bf7d83a76952b05236b7deef14387d05"
+workers_dev = true
+route = ""
+zone_id = "71c0b117b1501e67e95719bc203e507c"
+
+[site]
+bucket = "./build"
+entry-point = "workers-site"
