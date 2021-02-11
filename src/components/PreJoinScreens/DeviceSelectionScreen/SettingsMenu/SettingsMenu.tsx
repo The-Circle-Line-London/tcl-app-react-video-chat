@@ -34,7 +34,7 @@ export default function SettingsMenu({ mobileButtonClass }: { mobileButtonClass?
       {isMobile ? (
         <Button
           ref={anchorRef}
-          onClick={() => setMenuOpen(true)}
+          onClick={() => setDeviceSettingsOpen(true)}
           startIcon={<MoreIcon />}
           className={mobileButtonClass}
         >
@@ -43,13 +43,14 @@ export default function SettingsMenu({ mobileButtonClass }: { mobileButtonClass?
       ) : (
         <Button
           ref={anchorRef}
-          onClick={() => setMenuOpen(true)}
+          onClick={() => setDeviceSettingsOpen(true)}
           startIcon={<SettingsIcon />}
           className={classes.settingsButton}
         >
           Settings
         </Button>
       )}
+
       <MenuContainer
         open={menuOpen}
         onClose={() => setMenuOpen(isOpen => !isOpen)}
@@ -70,11 +71,11 @@ export default function SettingsMenu({ mobileButtonClass }: { mobileButtonClass?
         <MenuItem onClick={() => setDeviceSettingsOpen(true)}>
           <Typography variant="body1">Audio and Video Settings</Typography>
         </MenuItem>
-        {/* {roomType !== 'peer-to-peer' && roomType !== 'go' && (
+        {roomType !== 'peer-to-peer' && roomType !== 'go' && (
           <MenuItem onClick={() => setConnectionSettingsOpen(true)}>
             <Typography variant="body1">Connection Settings</Typography>
           </MenuItem>
-        )} */}
+        )}
       </MenuContainer>
       <AboutDialog
         open={aboutOpen}
@@ -90,13 +91,13 @@ export default function SettingsMenu({ mobileButtonClass }: { mobileButtonClass?
           setMenuOpen(false);
         }}
       />
-      {/* <ConnectionOptionsDialog
+      <ConnectionOptionsDialog
         open={connectionSettingsOpen}
         onClose={() => {
           setConnectionSettingsOpen(false);
           setMenuOpen(false);
         }}
-      /> */}
+      />
     </>
   );
 }

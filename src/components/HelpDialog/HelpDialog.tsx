@@ -27,10 +27,7 @@ function HelpDialog({ open, onClose }: PropsWithChildren<HelpDialogProps>) {
         <DialogContentText>
           <p>If you are having connection problems, then try disconnecting and re-connecting.</p>
           <p>If you microphone is working then microphone inidicator should be changing when you talk.</p>
-          <p>
-            You can change your audio settings using the 'Audio and Video settings' which is in the 'Settings' menu,
-            which is next to the 'Disconnect' button.
-          </p>
+          <p>You can change your audio settings clicking 'Settings', which is next to the 'Disconnect' button.</p>
           <p>
             If you have more than 1 camera, the 'Flip Camera' button will switch between them - this is common on Phones
             and some Tablets.
@@ -42,8 +39,8 @@ function HelpDialog({ open, onClose }: PropsWithChildren<HelpDialogProps>) {
             When you are prompted for your room number, enter <strong>{(user as any)?.pin}</strong>
           </p>
           <p>
-            Top Tip: If you do connect by phone, mute your microphone and turn you speakers off - you can still use your
-            screen to see the other person.
+            Top Tip: If you do connect by phone, mute your microphone and turn your speakers off - you can still use
+            your screen to see the other person.
           </p>
         </DialogContentText>
       </DialogContent>

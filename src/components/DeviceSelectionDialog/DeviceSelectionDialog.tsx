@@ -51,19 +51,19 @@ export default function DeviceSelectionDialog({ open, onClose }: { open: boolean
 
   return (
     <Dialog open={open} onClose={onClose} classes={{ paper: classes.paper }}>
-      <DialogTitle>Audio and Video Settings</DialogTitle>
+      <DialogTitle>Sound and Camera Settings</DialogTitle>
       <Divider />
       <DialogContent className={classes.container}>
         <div className={classes.listSection}>
           <Typography variant="h6" className={classes.headline}>
-            Video
+            Camera
           </Typography>
           <VideoInputList />
         </div>
         <Divider />
         <div className={classes.listSection}>
           <Typography variant="h6" className={classes.headline}>
-            Audio
+            Sound
           </Typography>
           <AudioInputList />
         </div>

@@ -19,15 +19,8 @@ export default function Menu(props: { buttonClassName?: string }) {
 
   return (
     <>
-      <Button onClick={() => setMenuOpen(isOpen => !isOpen)} ref={anchorRef} className={props.buttonClassName}>
-        {isMobile ? (
-          <MoreIcon />
-        ) : (
-          <>
-            Settings
-            <ExpandMoreIcon />
-          </>
-        )}
+      <Button onClick={() => setSettingsOpen(true)} ref={anchorRef} className={props.buttonClassName}>
+        {isMobile ? <MoreIcon /> : <>Settings</>}
       </Button>
       <MenuContainer
         open={menuOpen}

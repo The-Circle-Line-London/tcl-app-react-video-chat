@@ -23,7 +23,7 @@ export default function AudioInputList() {
   return (
     <div>
       <Typography variant="subtitle2" gutterBottom>
-        Audio Input
+        Available Microphones or Headsets
       </Typography>
       <Grid container alignItems="center" justify="space-between">
         <div className="inputSelect">
