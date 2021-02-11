@@ -46,10 +46,14 @@ export function verifyPasscode(passcode: string) {
 
 export function getErrorMessage(message: string) {
   switch (message) {
-    case 'passcode incorrect':
-      return 'Passcode is incorrect';
-    case 'passcode expired':
-      return 'Passcode has expired';
+    case 'no authorisation provided':
+      return 'You do not have permission to access this session. Please log in and try again.';
+    case 'no passcode provided':
+      return 'No session identifier has been provided so we cannot proceed';
+    case 'not a valid user':
+      return 'You are not a valid user so we cannot proceed';
+    case 'session not valid':
+      return 'You are not allow to join the session. It may have already past or not started yet.';
     default:
       return message;
   }
