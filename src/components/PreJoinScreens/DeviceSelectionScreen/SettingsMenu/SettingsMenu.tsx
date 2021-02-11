@@ -70,11 +70,11 @@ export default function SettingsMenu({ mobileButtonClass }: { mobileButtonClass?
         <MenuItem onClick={() => setDeviceSettingsOpen(true)}>
           <Typography variant="body1">Audio and Video Settings</Typography>
         </MenuItem>
-        {roomType !== 'peer-to-peer' && roomType !== 'go' && (
+        {/* {roomType !== 'peer-to-peer' && roomType !== 'go' && (
           <MenuItem onClick={() => setConnectionSettingsOpen(true)}>
             <Typography variant="body1">Connection Settings</Typography>
           </MenuItem>
-        )}
+        )} */}
       </MenuContainer>
       <AboutDialog
         open={aboutOpen}
