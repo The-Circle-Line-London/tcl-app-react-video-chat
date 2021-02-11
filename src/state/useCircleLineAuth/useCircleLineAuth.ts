@@ -40,7 +40,6 @@ export function fetchToken(name: string, room: string, passcode: string, create_
 export function verifyPasscode(passcode: string) {
   return fetchToken('temp-name', 'temp-room', passcode, false /* create_room */).then(async res => {
     const jsonResponse = await res.json();
-    console.log('VerifyPasscode=', jsonResponse);
     return jsonResponse;
   });
 }
@@ -90,12 +89,7 @@ export default function useCircleLineAuth() {
   );
 
   useEffect(() => {
-    console.log('User=', user);
-  }, [user]);
-
-  useEffect(() => {
     const passcode = getPasscode();
-    console.log('Checking passcode:', passcode);
     if (passcode) {
       verifyPasscode(passcode)
         .then(verification => {

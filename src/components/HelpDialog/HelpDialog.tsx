@@ -17,8 +17,6 @@ interface HelpDialogProps {
 function HelpDialog({ open, onClose }: PropsWithChildren<HelpDialogProps>) {
   const { user } = useAppState();
 
-  console.log(user);
-
   return (
     <Dialog open={open} onClose={onClose} fullWidth={true} maxWidth="xs">
       <DialogTitle>Help</DialogTitle>
