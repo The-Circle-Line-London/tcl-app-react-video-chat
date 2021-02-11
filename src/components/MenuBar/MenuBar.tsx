@@ -3,6 +3,7 @@ import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 
 import Button from '@material-ui/core/Button';
 import EndCallButton from '../Buttons/EndCallButton/EndCallButton';
+import HelpButton from '../Buttons/HelpButton/HelpButton';
 import FlipCameraButton from './FlipCameraButton/FlipCameraButton';
 import Menu from './Menu/Menu';
 
@@ -81,7 +82,7 @@ export default function MenuBar() {
         <Grid container justify="space-around" alignItems="center">
           <Hidden smDown>
             <Grid style={{ flex: 1 }}>
-              <Typography variant="body1">{room.name}</Typography>
+              <HelpButton />
             </Grid>
           </Hidden>
           <Grid item>

@@ -59,7 +59,12 @@ export function getErrorMessage(message: string) {
 export default function useCircleLineAuth() {
   const history = useHistory();
 
-  const [user, setUser] = useState<{ displayName: undefined; photoURL: undefined; passcode: string } | null>(null);
+  const [user, setUser] = useState<{
+    displayName: undefined;
+    photoURL: undefined;
+    passcode: string;
+    pin: string;
+  } | null>(null);
   const [isAuthReady, setIsAuthReady] = useState(false);
   const [roomType, setRoomType] = useState<RoomType>();
   const passcode = getPasscode();
@@ -83,6 +88,10 @@ export default function useCircleLineAuth() {
     },
     [user]
   );
+
+  useEffect(() => {
+    console.log('User=', user);
+  }, [user]);
 
   useEffect(() => {
     const passcode = getPasscode();
