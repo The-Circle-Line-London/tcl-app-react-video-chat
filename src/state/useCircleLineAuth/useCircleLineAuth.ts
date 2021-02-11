@@ -49,11 +49,17 @@ export function getErrorMessage(message: string) {
     case 'no authorisation provided':
       return 'You do not have permission to access this session. Please log in and try again.';
     case 'no passcode provided':
-      return 'No session identifier has been provided so we cannot proceed';
+      return 'No session identifier has been provided so we cannot proceed.';
     case 'not a valid user':
-      return 'You are not a valid user so we cannot proceed';
-    case 'session not valid':
-      return 'You are not allow to join the session. It may have already past or not started yet.';
+      return 'You are not a valid user.';
+    case 'not a valid session user':
+      return 'You are not allowed to join the session.';
+    case 'session finished':
+      return 'You are not allowed to join the session. It has already finished.';
+    case 'session not started':
+      return 'You are not allowed to join the session. It has not started yet.';
+    case 'session not found':
+      return 'Session could not be found.';
     default:
       return message;
   }
