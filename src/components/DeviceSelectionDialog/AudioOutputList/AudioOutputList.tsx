@@ -13,7 +13,7 @@ export default function AudioOutputList() {
       {audioOutputDevices.length > 1 ? (
         <FormControl fullWidth>
           <Typography variant="subtitle2" gutterBottom>
-            Available Speakers or Headsets
+            Available Speakers, Headphones or Headsets
           </Typography>
           <Select onChange={e => setActiveSinkId(e.target.value as string)} value={activeSinkId} variant="outlined">
             {audioOutputDevices.map(device => (
