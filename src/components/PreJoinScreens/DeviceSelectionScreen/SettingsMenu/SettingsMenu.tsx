@@ -90,13 +90,13 @@ export default function SettingsMenu({ mobileButtonClass }: { mobileButtonClass?
           setMenuOpen(false);
         }}
       />
-      <ConnectionOptionsDialog
+      {/* <ConnectionOptionsDialog
         open={connectionSettingsOpen}
         onClose={() => {
           setConnectionSettingsOpen(false);
           setMenuOpen(false);
         }}
-      />
+      /> */}
     </>
   );
 }
