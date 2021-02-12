@@ -1,4 +1,4 @@
-name = "tcl-app-react-video-chat"
+name = "tcl-app-dev-video-chat"
 type = "webpack"
 account_id = "bf7d83a76952b05236b7deef14387d05"
 workers_dev = true
@@ -9,3 +9,12 @@ vars = { REACT_APP_SET_AUTH = "tcl" }
 [site]
 bucket = "./build"
 entry-point = "workers-site"
+
+[env.production]
+name = "tcl-app-prod-video-chat"
+route = "https://app.thecircleline.co.uk/session-room*"
+
+[env.staging]
+name = "tcl-app-staging-video-chat"
+route = "https://appstaging.thecircleline.co.uk/session-room*"
+
